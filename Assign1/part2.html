@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        fieldset {
+            background: lightyellow;
+            border: 10px solid yellow;
+            margin-bottom: 10px;
+            width: 720px
+        }
+        
+        label {
+            width: 180px;
+            display: inline-block;
+            text-align: right;
+            vertical-align: top
+        }
+        
+        textarea {
+            width: 360px;
+            height: 50px
+        }
+        
+        span {
+            width: 40px;
+            display: inline-block
+        }
+        
+        .classAuto {
+            width: auto;    
+        }
+        
+        .lowerRange {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 3px;
+           }
+        
+        .higherRange {
+            background-color: purple;
+            color: white;
+            text-align: center;
+            padding: 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2> Please enter your details for our dating website</h2>
+    <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Your face</legend>
+
+            <label for="photo">Your Image: </label>
+            <input type="file" name="photo" required>
+            <br>
+
+            <label for="imgPreview">Image Preview: </label>
+            <img id="preview">
+        </fieldset>
+        <fieldset>
+            <legend>Your general details</legend>
+            <label for="yourName">Name: </label>
+            <input type="text" name="yourName" placeholder="Your full name" required>
+            <br>
+
+            <label for="sex"> Gender: </label>
+            <input type="radio" name="sex" value="Male" id="m" required><label class="classAuto" for="m">Male</label>
+            <input  type="radio" name="sex" value="Female" id="f" required> <label class="classAuto" for="f">Female</label>
+            <br>
+
+            <label for="age"> Age: </label>
+            <input type="number" min="0" max="99" step="1" value="20" name="age" required>
+            <br>
+
+            <label for="birthday">Date of birth: </label>
+            <input type="date" name="birthday">
+            <br>
+
+            <label for="colorFav">Favourite color: </label>
+            <input type="color" name="colorFav">
+            <br>
+
+            <label for="country">Which country: </label>
+            <select name="country">
+                <option value="noSelection"></option>
+                <option value="in">India</option>
+                <option value="nk">Korea</option>
+                <option value="usa">USA</option>
+                <option value="gb">Great Britain</option>
+                <option value="fr">France</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Your Indicators</legend>
+            <label for="height">Height: </label>
+            <span class="lowerRange"> Short </span>
+            <input type="range" min="0" max="100" step="5" name="height" value="50"> <span class="higherRange"> Tall </span>
+            <br>
+
+            <label for="salary">Salary: </label>
+            <span class="lowerRange"> Poor </span>
+            <input type="range" min="0" max="100" step="5" name="salary" value="50"> <span class="higherRange"> Rich </span>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Your Contact Information</legend>
+
+            <label for="email">Email: </label>
+            <input type="email" name="email" required>
+            <br>
+
+            <label for="mobile">Mobile: </label>
+            <input type="tel" name="mobile">
+            <br>
+
+            <label for="address">Address: </label>
+            <textarea name="address"></textarea>
+            <br>
+
+            <label for="contactMode">Method to contact you: </label>
+            <input type="checkbox" name="contactMode" id="email"><label class="classAuto" for="email">Email</label>
+            <input type="checkbox" name="contactMode" id="wapp"><label class="classAuto" for="wapp">Whatsapp</label>
+            <input type="checkbox" name="contactMode" id="chat"><label class="classAuto" for="chat">In-app-chat</label>
+
+        </fieldset>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
